@@ -25,7 +25,7 @@ go install github.com/woelkjulian/calc-commits
 go to directory $GOPATH/bin and execute
 
 ```
-./calc-commits -url {gitlab url} -t {gitlab privtate token} -proj {gitlab project id}
+./calc-commits -url {gitlab url} -t {gitlab private token} -proj {gitlab project id}
 ```
 
 ## Optional flags
