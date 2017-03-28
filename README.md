@@ -14,8 +14,7 @@ or by cloning the repository in $GOPATH/src/github.com/woelkjulian
 
 ```
 git clone https://github.com/woelkjulian/calc-commit.git
-'''
-
+```
 if cloned execute following command from $GOPATH
 ```
 go install github.com/woelkjulian/calc-commit
@@ -28,6 +27,7 @@ go to directory $GOPATH/bin and execute
 ```
 ./calc-commits -url {gitlab url} -t {gitlab privtate token} -proj {gitlab project id}
 ```
+
 # Optional flags
 
 additional log information
