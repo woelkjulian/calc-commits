@@ -83,7 +83,7 @@ func getCommits(pURL, pToken, pBranch *string, pProj *int, pLog *bool) ([]model.
 	var url = fmt.Sprint(*pURL, *pProj, "/repository/commits")
 
 	if *pBranch != "" {
-		url += fmt.Sprint("/", *pBranch)
+		url += fmt.Sprint("/:", *pBranch)
 	}
 
 	if *pLog == true {
@@ -152,7 +152,7 @@ func getMergeRequestCommits(pURL, pToken, pBranch *string, pProj *int, mergeReqI
 	var url = fmt.Sprint(*pURL, *pProj, "/merge_requests/", mergeReqID, "/commits")
 
 	if *pBranch != "" {
-		url += fmt.Sprint("/", *pBranch)
+		url += fmt.Sprint("/:", *pBranch)
 	}
 
 	if *pLog == true {
