@@ -10,14 +10,14 @@ get the code by executing the following command at $GOPATH
 go get github.com/woelkjulian/calc-commits 
 ```
 
-or by cloning the repository in $GOPATH/src/github.com/woelkjulian
+or by cloning the repository into $GOPATH/src/github.com/woelkjulian
 
 ```
-git clone https://github.com/woelkjulian/calc-commit.git
+git clone https://github.com/woelkjulian/calc-commits.git
 ```
 if cloned execute following command from $GOPATH
 ```
-go install github.com/woelkjulian/calc-commit
+go install github.com/woelkjulian/calc-commits
 ```
 
 ## Usage
