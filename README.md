@@ -4,7 +4,7 @@ calc-commits
 This repository contains a cli tool which calculates the quotient of merge request commits and all commits of a specified gitlab project
 
 ## Getting started
-get the code by executing the following command at $GOPATH
+get the code by executing the following command at $GOPATH/src
 
 ```
 go get github.com/woelkjulian/calc-commits 
@@ -15,7 +15,7 @@ or by cloning the repository into $GOPATH/src/github.com/woelkjulian
 ```
 git clone https://github.com/woelkjulian/calc-commits.git
 ```
-if cloned execute following command from $GOPATH
+if cloned execute following command from $GOPATH/src
 ```
 go install github.com/woelkjulian/calc-commits
 ```
