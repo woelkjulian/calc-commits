@@ -28,7 +28,7 @@ go to directory $GOPATH/bin and execute
 ./calc-commits -url {gitlab url} -t {gitlab privtate token} -proj {gitlab project id}
 ```
 
-# Optional flags
+## Optional flags
 
 additional log information
 ```
