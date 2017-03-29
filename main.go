@@ -24,13 +24,13 @@ func main() {
 		msg := "Arguments missing: \n"
 
 		if *urlPtr == "" {
-			msg += "- URL (-url)"
+			msg += "- URL (-url)\n"
 		}
 		if *tokenPtr == "" {
-			msg += "- token (-t)"
+			msg += "- token (-t)\n"
 		}
 		if *projPtr == -1 {
-			msg += "- project number (-proj)"
+			msg += "- project number (-proj)\n"
 		}
 
 		fmt.Printf("\n\n%v\n\n", msg)
@@ -70,17 +70,16 @@ func calcMergeCommitsQuotient(pURL, pToken, pBranch *string, pProj *int, pLog *b
 
 	noOfAllCommits := len(commits) + noOfMergeCommits
 
-	fmt.Printf("\n\nQuotient of merge request commits: %v / all commits: %v = %.2f\n\n",
-		noOfMergeCommits,
-		noOfAllCommits,
-		float64(noOfMergeCommits)/float64(noOfAllCommits))
+	fmt.Printf("\n\nPercentage of Merge Request Commits: %.2f%v\n\n",
+		float64(noOfMergeCommits)/float64(noOfAllCommits)*float64(100),
+		"%")
 
 	return nil
 }
 
 func getCommits(pURL, pToken, pBranch *string, pProj *int, pLog *bool) ([]model.Commit, error) {
 
-	var url = fmt.Sprint(*pURL, *pProj, "/repository/commits")
+	var url = fmt.Sprint(*pURL, "/api/v3/projects/", *pProj, "/repository/commits")
 
 	if *pBranch != "" {
 		url += fmt.Sprint("/:", *pBranch)
@@ -117,7 +116,7 @@ func getCommits(pURL, pToken, pBranch *string, pProj *int, pLog *bool) ([]model.
 
 func getMergeRequests(pURL, pToken, pBranch *string, pProj *int, pLog *bool) ([]model.MergeRequest, error) {
 
-	var url = fmt.Sprint(*pURL, *pProj, "/merge_requests")
+	var url = fmt.Sprint(*pURL, "/api/v3/projects/", *pProj, "/merge_requests")
 
 	if *pLog == true {
 		fmt.Printf("\ngetMergeRequests(): from %v %v", url, "...")
@@ -149,7 +148,7 @@ func getMergeRequests(pURL, pToken, pBranch *string, pProj *int, pLog *bool) ([]
 
 func getMergeRequestCommits(pURL, pToken, pBranch *string, pProj *int, mergeReqID int, pLog *bool) ([]model.Commit, error) {
 
-	var url = fmt.Sprint(*pURL, *pProj, "/merge_requests/", mergeReqID, "/commits")
+	var url = fmt.Sprint(*pURL, "/api/v3/projects/", *pProj, "/merge_requests/", mergeReqID, "/commits")
 
 	if *pBranch != "" {
 		url += fmt.Sprint("/:", *pBranch)
