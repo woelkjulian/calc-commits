@@ -1,9 +1,15 @@
 calc-commits
 ===============
 
-This repository contains a cli tool which calculates the quotient of merge request commits and all commits of a specified gitlab project
+This repository contains a go cli tool which calculates the quotient of merge request commits and all commits of a specified gitlab project
+
+## Install go
+If not already done, install go to get started
+
+Follow the instructions at https://golang.org/doc/install to install and setup go
 
 ## Getting started
+
 get the code by executing the following command at $GOPATH/src
 
 ```
@@ -36,6 +42,8 @@ To start the tool you need:
 - gitlab private token
 - project namespace/name or project id
 
+execute:
+
 ```
 // with project namespace/name
 ./calc-commits -url {gitlab url} -t {gitlab private token} -projname {project namespace/name}
@@ -43,14 +51,12 @@ To start the tool you need:
 // with project id
 ./calc-commits -url {gitlab url} -t {gitlab private token} -projid {project id}
 
-
 // for example
 ./calc-commits -url https://gitlab.example.com -t abcdef123456 -projname tools/calc-commits
 
 ```
 
 ## Optional flags
-
 
 ```
 // additional log information
